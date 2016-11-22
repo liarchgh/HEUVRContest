@@ -48,18 +48,18 @@ public class Line : MonoBehaviour {
 					if(dy<0.3f)
 					{
 						str="Perfect";
-						score=10;
+						score=100;
 					}else if(dy<0.5f)
 					{
 						str="Great";
-						score=8;
+						score=80;
 					}else if(dy<1.0f)
 					{
 						str="Good";
-						score=4;
+						score=40;
 					}else{
 						str="Bad";
-						score=2;
+						score=20;
 					}
 
 					l.setStr(str);
@@ -77,18 +77,18 @@ public class Line : MonoBehaviour {
 						if(dy<0.3f)
 						{
 							str="Perfect";
-							score=10;
+							score=100;
 						}else if(dy<0.5f)
 						{
 							str="Great";
-							score=8;
+							score=80;
 						}else if(dy<1.0f)
 						{
 							str="Good";
-							score=4;
+							score=40;
 						}else{
 							str="Bad";
-							score=2;
+							score=20;
 						}
 						l.setStr(str);
 

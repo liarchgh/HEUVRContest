@@ -22,6 +22,7 @@ public class Note_data
 
 }
 public class NoteGenMan : MonoBehaviour {
+	public AudioSource music;
 	public TextAsset geiT,mapT;
 	public myUGUI l;
 	public float dt,pt;
@@ -180,6 +181,9 @@ public class NoteGenMan : MonoBehaviour {
 
 		}else{
 			CancelInvoke();
+			music.Stop();
+			avatar.Stop();
+			l.FinalDisplay();
 		}
 	}
 
@@ -341,39 +345,60 @@ public class NoteGenMan : MonoBehaviour {
 	IEnumerator AnimUpdate(int t1,float dt)
 	{
 		yield return new WaitForSeconds(dt*4);
+		l.setInfo("Anim");
 		if(t1==0)
 		{
 			avatar.SetBool("OAD",true);
 			avatar.SetBool("Knee",false);
 			avatar.SetBool("Check",false);
+			avatar.SetBool("Sawyer",false);
+			avatar.SetBool("Murabasa",false);
+			avatar.SetBool("Amaterasu",false);
+			avatar.SetBool("Romance",false);
+			avatar.SetBool("Idle",false);
 		}else if(t1==1)
 		{
 			avatar.SetBool("Knee",true);
 			avatar.SetBool("OAD",false);
 		}else if(t1==2)
 		{
+			avatar.SetBool("Sawyer",true);
+			avatar.SetBool("OAD",false);
 		}else if(t1==3)
 		{
+			avatar.SetBool("Sawyer",true);
+			avatar.SetBool("OAD",false);
 		}else if(t1==4)
 		{
 		}else if(t1==5)
 		{
 		}else if(t1==6)
 		{
+			avatar.SetBool("isMirror",!(avatar.GetBool("isMirror")));
+
+			avatar.SetBool("Romance",true);
+			avatar.SetBool("Murabasa",false);
+			avatar.SetBool("Amaterasu",false);
 		}else if(t1==7)
 		{
+			avatar.SetBool("Murabasa",true);
+			avatar.SetBool("Amaterasu",false);
 		}else if(t1==8)
 		{
 			avatar.SetBool("Amaterasu",true);
+			avatar.SetBool("Murabasa",false);
 		}else if(t1==9)
 		{
+			avatar.SetBool("Idle",true);
 		}else if(t1==10)
 		{
 		}else if(t1==11)
 		{
+			avatar.SetBool("Idle",true);
 		}else if(t1==12)
 		{
 			avatar.SetBool("Rozario",true);
+			avatar.SetBool("Sawyer",false);
 		}else if(t1==13)
 		{
 			avatar.SetBool("LosAngeles",true);

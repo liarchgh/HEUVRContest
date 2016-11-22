@@ -142,4 +142,24 @@ public class MUGBtn : MonoBehaviour {
 			return false;
 		}
 	}
+	void OnTriggerEnter(Collider other)
+	{
+		//Debug.Log("Col");
+		if(other.gameObject.tag=="Hand")
+		{
+			
+			mat.enabled=true;
+			m_line.setState(State.down);
+			m_rectLine.setState(State.down);
+		}
+	}
+	void OnTriggerExit(Collider other)
+	{
+		if(other.gameObject.tag=="Hand")
+		{
+			mat.enabled=false;
+			m_line.setState(State.up);
+			m_rectLine.setState(State.up);
+		}
+	}
 }

@@ -50,7 +50,7 @@ public class RectLine : MonoBehaviour {
 				if(!re.isPressed)
 				{
 					re.isPressed=true;
-					r.transform.position=new Vector3(r.transform.position.x,this.transform.position.y,0);
+					r.transform.position=new Vector3(r.transform.position.x,this.transform.position.y,this.transform.position.z);
 					r.transform.localScale=new Vector3(r.transform.localScale.x,-this.transform.position.y+re.endNote.transform.position.y,r.transform.localScale.z);
 				}
 				l.setScore((int)(Time.deltaTime*100));
